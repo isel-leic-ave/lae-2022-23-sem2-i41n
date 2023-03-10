@@ -9,10 +9,9 @@ public class App {
         var p2 = new Person(80, "Manel");
         // TPC: How to call count() in Person class from Java ???
         // System.out.println(Person.count());
+        System.out.println(Person.Companion.count());
         
-        // p1.print(); // Nao é possivel em Java
-        PersonKt.print(p1);
-        PersonKt.print(p2);
+        
 
     }
 }
