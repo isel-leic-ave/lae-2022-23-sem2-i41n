@@ -14,4 +14,7 @@ public class App {
         
 
     }
+    public static int test(Student s) {
+        return s.getName().hashCode() + s.getNr() + Student.count();
+    }
 }

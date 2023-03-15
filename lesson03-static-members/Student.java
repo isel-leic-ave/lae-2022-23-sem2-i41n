@@ -2,6 +2,8 @@ public class Student {
     final int nr;
     final String name;
 
+    
+
     private static int studentsCount;
     
     public static int count() {
@@ -14,5 +16,17 @@ public class Student {
         this.nr = nr;
         this.name = name;
         studentsCount++;
+    }
+
+    public int getNr() {
+        return nr;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static int getStudentsCount() {
+        return studentsCount;
     }
 }
