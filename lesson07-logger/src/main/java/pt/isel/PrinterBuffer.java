@@ -1,6 +1,6 @@
 package pt.isel;
 
-public class PrintBuffer implements Printer {
+public class PrinterBuffer implements Printer {
     private final StringBuilder buffer = new StringBuilder();
 
     @Override
