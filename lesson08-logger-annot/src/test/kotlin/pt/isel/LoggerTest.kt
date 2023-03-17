@@ -7,18 +7,18 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class LoggerTest {
-    @Test fun `log fields of Point`() {
+    @Test fun `log fields of Student`() {
         val out = PrinterBuffer();
         val logger = Logger(out, MemberKind.FIELD)
-        val p = Point(5, 7)
-        logger.log(p)
-        assertEquals("Point: x = 5, y = 7, ", out.buffer())
+        val s = Student(131324, "Ze Manel")
+        logger.log(s)
+        assertEquals("Student: nr = 131324, name = Ze Manel, ", out.buffer())
     }
     @Test fun `log properties of Point`() {
         val out = PrinterBuffer();
         val logger = Logger(out, MemberKind.PROPERTY)
         val p = Point(5, 7)
         logger.log(p)
-        assertEquals("Point: Module = 8.602325267042627, X = 5, Y = 7, ", out.buffer())
+        assertEquals("Point: MODULE = 8.602325267042627, ", out.buffer())
     }
 }

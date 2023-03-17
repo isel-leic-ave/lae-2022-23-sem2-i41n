@@ -1,3 +1,3 @@
 package pt.isel
 
-class Student(nr: Int, name: String)
+class Student(var nr: Int, var name: String)
