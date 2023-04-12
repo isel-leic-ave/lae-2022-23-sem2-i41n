@@ -9,7 +9,7 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.7.10"
-
+    id("me.champeau.jmh") version "0.7.0"
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -20,6 +20,8 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":lesson11-logger-annot-formatter"))
+
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 

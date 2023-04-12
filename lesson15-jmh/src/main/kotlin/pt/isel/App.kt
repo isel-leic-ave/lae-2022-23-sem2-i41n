@@ -3,13 +3,29 @@
  */
 package pt.isel
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
-        }
-}
+import kotlin.system.measureNanoTime
 
 fun main() {
-    println(App().greeting)
+    val emptyPrinter = object : Printer {
+        override fun print(msg: Any?) {
+            /* Do nothing */
+        }
+    }
+    val logger = Logger(emptyPrinter, MemberKind.FIELD)
+    val baseline = LoggerBaselineStudent(emptyPrinter)
+    val s = Student(91237, "Ze Manel")
+    for(i in 1..10)
+        measureNanoTime {
+            logger.log(s)
+        }.let {
+            println()
+            println("Logger reflect log() took $it ns")
+        }
+    for(i in 1..10)
+        measureNanoTime {
+            baseline.log(s)
+        }.let {
+            println()
+            println("Baseline NO reflect log() took $it ns")
+        }
 }
