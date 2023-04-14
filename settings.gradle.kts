@@ -8,3 +8,4 @@ rootProject.name = "lae-2023-i41N"
 // include("lesson08-logger-annot")
 include("lesson11-logger-annot-formatter")
 include("lesson15-jmh")
+include("lesson16-cojen-maker")
