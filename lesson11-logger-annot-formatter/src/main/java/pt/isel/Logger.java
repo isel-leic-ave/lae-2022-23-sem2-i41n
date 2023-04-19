@@ -1,19 +1,14 @@
 package pt.isel;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
-public class Logger {
-    private final Printer out;
+public class Logger extends AbstractLogger {
+
     private final MemberKind kind;
     private static final Map<Class<?>, List<? extends Getter>> getters = new HashMap<>();
 
@@ -22,7 +17,7 @@ public class Logger {
     }
 
     public Logger(Printer out, MemberKind kind) {
-        this.out = out;
+        super(out);
         this.kind = kind;
     }
 

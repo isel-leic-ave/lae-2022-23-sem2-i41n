@@ -22,6 +22,8 @@ repositories {
 dependencies {
     implementation(project(":lesson11-logger-annot-formatter"))
     implementation("org.cojen:cojen-maker:2.4.7")
+    implementation("org.ow2.asm:asm:9.4")
+    implementation("org.ow2.asm:asm-util:9.4")
 
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
