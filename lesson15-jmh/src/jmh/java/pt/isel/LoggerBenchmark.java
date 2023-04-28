@@ -24,13 +24,7 @@ public class LoggerBenchmark {
 
     @Setup
     public void setup(Blackhole bh) {
-        emptyPrinter = new Printer() {
-            @Override
-            public void print(Object msg) {
-                // Do nothing
-                bh.consume(msg);
-            }
-        };
+        emptyPrinter = new EmptyPrinter(bh);
         logger = switch(approach) {
             case "reflect" -> new Logger(emptyPrinter, MemberKind.FIELD);
             case "baseline" -> new LoggerBaselineStudent(emptyPrinter);
