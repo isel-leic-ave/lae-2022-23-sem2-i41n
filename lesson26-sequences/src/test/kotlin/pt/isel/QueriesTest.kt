@@ -102,4 +102,11 @@ class QueriesTest {
         assertEquals(0, count)
     }
 
+    @Test fun `Concat two sequences of strings`() {
+        val first = listOf("Portugal", "Football", "Teams")
+        val other = listOf("SLB", "The", "Champion")
+        val actual = first + other // first.asSequence().concat(other)
+        val expected = listOf("Portugal", "Football", "Teams", "SLB", "The", "Champion")
+        assertEquals(expected, actual)
+    }
 }
